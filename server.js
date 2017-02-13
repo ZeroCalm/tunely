@@ -1,6 +1,7 @@
 // require express and other modules
 var express = require('express'),
     app = express();
+    controllers = require('./controllers');
 
 // parse incoming urlencoded form data
 // and populate the req.body object
@@ -31,7 +32,7 @@ app.use(express.static('public'));
 
 
 // get all games
-app.get("/api/games", function findGames(req, res){
+app.get("/api/albums", function findGames(req, res){
   db.Game.find({}, (err, games) => {
     if (err) { return console.log("index error: " + err); }
     res.send(games);

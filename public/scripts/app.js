@@ -40,13 +40,73 @@ sampleAlbums.push({
 $(document).ready(function() {
   console.log('app.js loaded!');
 });
+  var displayResults =
+    ` <div class='row'>
+       <div class="col-md-3 col-xs-12 thumbnail album-art">
+         <img src="/images/800x800.png" alt="album image">
+       </div>
 
+        <div class="col-md-9 col-xs-12">
+         <ul class="list-group">
+           <li class="list-group-item">
+             <h4 class='inline-header'>Album Name:</h4>
+             <span class='album-name'>data.name</span>
+           </li>
 
+           <li class="list-group-item">
+             <h4 class='inline-header'>Artist Name:</h4>
+             <span class='artist-name'>data.artistName</span>
+           </li>
 
+           <li class="list-group-item">
+             <h4 class='inline-header'>Released date:</h4>
+             <span class='album-releaseDate'>data.releaseDate</span>
+           </li>
+           <li class="list-group-item">
+             <h4 class='inline-header'>Released date:</h4>
+             <span class='album-genres'><li>data.genres</li></span>
+           </li>
+         </ul>
+       </div>
+
+     </div> `
 
 
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
   console.log('rendering album:', album);
+  for(var i =0; i < album.length; i++){
 
+    var $resultsToDisplay =
+        ` <div class='row'>
+           <div class="col-md-3 col-xs-12 thumbnail album-art">
+             <img src="/images/800x800.png" alt="album image">
+           </div>
+
+            <div class="col-md-9 col-xs-12">
+             <ul class="list-group">
+               <li class="list-group-item">
+                 <h4 class='inline-header'>Album Name:</h4>
+                 <span class='album-name'>${data.name}</span>
+               </li>
+
+               <li class="list-group-item">
+                 <h4 class='inline-header'>Artist Name:</h4>
+                 <span class='artist-name'>${data.artistName}</span>
+               </li>
+
+               <li class="list-group-item">
+                 <h4 class='inline-header'>Released date:</h4>
+                 <span class='album-releaseDate'>${data.releaseDate}</span>
+               </li>
+               <li class="list-group-item">
+                 <h4 class='inline-header'>Released date:</h4>
+                 <span class='album-genres'><li>${data.genres}</li></span>
+               </li>
+             </ul>
+           </div>
+
+         </div> `;
+      $result.append($resultsToDisplay);  
+  }
 }

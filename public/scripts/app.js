@@ -20,6 +20,7 @@ sampleAlbums.push({
              releaseDate: '2006, February 17',
              genres: [ 'synth pop', 'electronica', 'experimental' ]
            });
+        
 sampleAlbums.push({
              artistName: 'Juno Reactor',
              name: 'Shango',
@@ -107,6 +108,6 @@ function renderAlbum(album) {
            </div>
 
          </div> `;
-      $result.append($resultsToDisplay);  
+      $result.append($resultsToDisplay);
   }
 }
